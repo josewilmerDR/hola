@@ -124,79 +124,105 @@ function NavbarSecondary() {
   return (
     <Box sx={{ flexGrow: 1, minWidth: "375px" }}>
       <AppBar position="static" color="secondaryLight" sx={{ height: 32, width: "100%", display: "flex", flexDirection: "row", alignItems: "center" }}>
-        <Toolbar sx={{ height: "20" }}>
-          <IconButton
-            size="medium"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ color: "white", mr: 2, height: "20", display: "flex", flexDirection: "column", display: { xs: "flex", sm: "none" } }}
-            onClick={handleMenuOpenOne}
-          >
-            <MenuIcon sx={{ height: "20" }} />
-          </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "block", sm: "none" }, paddingRight: 2, color: "white", fontSize: "1rem" }}
-          >
-            Todas las caregorías
-          </Typography>
+        <Toolbar sx={{ height: "20", display: "flex", justifyContent: "space-between", width: "100%" }}>
+          <Box sx={{ display: "flex", flexDirection: "row" }}>
+            {/* Menú para pantallas pequenhas, celulares*/}
+            <IconButton
+              size="medium"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ color: "white", mr: 1, height: "20", display: "flex", flexDirection: "column", display: { xs: "flex", sm: "none" } }}
+              onClick={handleMenuOpenOne}
+            >
+              <MenuIcon sx={{ height: "20" }} />
+            </IconButton>
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ display: { xs: "block", sm: "none" }, paddingRight: 2, paddingTop: 1, color: "white", fontSize: "1rem" }}
+              >
+                Todas las caregorías
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <Typography
+                  variant="h6"
+                  noWrap
+                  component="div"
+                  sx={{ display: { xs: "block", sm: "none" }, paddingTop: "7px", color: "white", fontSize: "0.6rem" }}
+                >
+                  MRK:0.00012322 USD
+                </Typography>
+                <Typography
+                  variant="h6"
+                  noWrap
+                  component="div"
+                  sx={{ display: { xs: "block", sm: "none" }, paddingBottom: 0, color: "white", fontSize: "0.6rem" }}
+                >
+                  MRK:0.00012322 USD
+                </Typography>
+              </Box>
+            </Box>
 
-          <Box sx={{ flexGrow: 1 }} />
-          <Button
-            aria-controls="simple-menu"
-            aria-haspopup="true"
-            onClick={handleClick}
-            sx={{ paddingRight: 2, color: "white", fontSize: "1rem", textTransform: "none", display: { xs: "none", sm: "block" }, flexDirection: "row", alignItems: "center" }}
-          >
-            Accesorios
-            <ExpandMoreIcon />
-          </Button>
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
-            <MenuItem onClick={handleClose}>Accesorio 1</MenuItem>
-            <MenuItem onClick={handleClose}>Accesorio 2</MenuItem>
-            <MenuItem onClick={handleClose}>Accesorio 3</MenuItem>
-          </Menu>
+            <Box sx={{ flexGrow: 1 }} />
 
-          <Button
-            aria-controls="simple-menu"
-            aria-haspopup="true"
-            onClick={handleClickClothes}
-            sx={{ paddingRight: 2, color: "white", fontSize: "1rem", textTransform: "none", display: { xs: "none", sm: "block" }, flexDirection: "row", alignItems: "center" }}
-          >
-            Ropa
-            <ExpandMoreIcon />
-          </Button>
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorElClothes}
-            keepMounted
-            open={Boolean(anchorElClothes)}
-            onClose={handleCloseClothes}
-          >
-            <MenuItem onClick={handleCloseClothes}>Bebé</MenuItem>
-            <MenuItem onClick={handleCloseClothes}>Niños</MenuItem>
-            <MenuItem onClick={handleCloseClothes}>Mujeres</MenuItem>
-            <MenuItem onClick={handleCloseClothes}>Hombres</MenuItem>
-            <MenuItem onClick={handleCloseClothes}>Moda</MenuItem>
-          </Menu>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" }, paddingRight: 2, color: "white", fontSize: "1rem" }}
-          >
-            Zapatos
-          </Typography>
+            <Button
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleClick}
+              sx={{ paddingRight: 2, color: "white", fontSize: "1rem", textTransform: "none", display: { xs: "none", sm: "block" }, flexDirection: "row", alignItems: "center" }}
+            >
+              Accesorios
+              <ExpandMoreIcon />
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>Accesorio 1</MenuItem>
+              <MenuItem onClick={handleClose}>Accesorio 2</MenuItem>
+              <MenuItem onClick={handleClose}>Accesorio 3</MenuItem>
+            </Menu>
 
+            <Button
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleClickClothes}
+              sx={{ paddingRight: 2, color: "white", fontSize: "1rem", textTransform: "none", display: { xs: "none", sm: "block" }, flexDirection: "row", alignItems: "center" }}
+            >
+              Ropa
+              <ExpandMoreIcon />
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorElClothes}
+              keepMounted
+              open={Boolean(anchorElClothes)}
+              onClose={handleCloseClothes}
+            >
+              <MenuItem onClick={handleCloseClothes}>Bebé</MenuItem>
+              <MenuItem onClick={handleCloseClothes}>Niños</MenuItem>
+              <MenuItem onClick={handleCloseClothes}>Mujeres</MenuItem>
+              <MenuItem onClick={handleCloseClothes}>Hombres</MenuItem>
+              <MenuItem onClick={handleCloseClothes}>Moda</MenuItem>
+            </Menu>
+          </Box>
+          <Box
+            sx={{}}>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: "none", sm: "block" }, paddingRight: 2, color: "white", fontSize: "1rem" }}
+            >
+              Marketts
+            </Typography>
+          </Box>
         </Toolbar>
       </AppBar>
       {renderMainMenu}

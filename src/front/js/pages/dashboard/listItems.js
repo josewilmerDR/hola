@@ -10,6 +10,7 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import LayersIcon from "@mui/icons-material/Layers";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
+import VpnKeyIcon from "@mui/icons-material/VpnKey";
 
 import { useNavigate } from "react-router-dom";
 
@@ -65,7 +66,7 @@ export function MainListItems() {
         </ListItemButton>
         <ListItemButton onClick={goToMyCode}>
           <ListItemIcon>
-            <LocalMallIcon />
+            <VpnKeyIcon />
           </ListItemIcon>
           <ListItemText primary="PIN TEMPORAL" />
         </ListItemButton>

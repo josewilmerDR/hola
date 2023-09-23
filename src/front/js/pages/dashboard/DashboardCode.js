@@ -247,13 +247,13 @@ export default function DashboardCode() {
                       <strong className="user-chat">{infoUsuario}.</strong>
                     </p>
                     <p>
-                      Al dar click en el boton blotante más (+), obtendrás un
+                      Al dar click en el boton flotante más (+), obtendrás un
                       código temporal para desbloquear el acceso físico a
                       nuestro módodudo de autoventa.
                     </p>
                     <p>
-                      Este código temporal es único y secreto, nunca compartas
-                      este código con nadie
+                      Este código temporal es único y secreto, no lo compartas
+                      con nadie
                     </p>
                   </div>
                   <PlusButton

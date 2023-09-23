@@ -13,7 +13,7 @@ export const Home = () => {
 
   return (
     <div className="text-center mt-5">
-      <PopUp />
+      {/* <PopUp /> */}
       <div>
         <h3>Vendedores mejor puntuados</h3>
         <TopSellers />
