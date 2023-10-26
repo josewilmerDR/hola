@@ -1,0 +1,15 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hola-staging-21012-authRole",
+      "UnauthRoleArn": "arn:aws:iam::163690249743:role/amplify-hola-staging-21012-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::163690249743:role/amplify-hola-staging-21012-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hola-staging-21012-deployment",
+      "UnauthRoleName": "amplify-hola-staging-21012-unauthRole",
+      "StackName": "amplify-hola-staging-21012",
+      "StackId": "arn:aws:cloudformation:us-east-1:163690249743:stack/amplify-hola-staging-21012/cc04ee10-73a4-11ee-8c87-0ea0c8ca89ad",
+      "AmplifyAppId": "d2hr962aq7il6y"
+    }
+  }
+}
