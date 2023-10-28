@@ -23,7 +23,7 @@ export const Home = () => {
         <h3>Ofertas relámpago</h3>
         <TopSellers />
       </div>
-      <div className="alert alert-info">
+      {/* <div className="alert alert-info">
         {store.message ||
           "Loading message from the backend (make sure your python backend is running)..."}
       </div>
@@ -36,7 +36,7 @@ export const Home = () => {
       <div>
         <p>Aquí sección de subir imagenes</p>
         <Uploader />
-      </div>
+      </div> */}
       <h3>Lo más valorado en Zapatos</h3>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         <AllProducts />

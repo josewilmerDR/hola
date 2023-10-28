@@ -26,18 +26,18 @@ export default function AllProducts() {
   }, []);
 
   //Funcion para traer las reviews de un producto en especifico.
-  useEffect(() => {
-    const getReviews = async () => {
-      const { respuestaJson, response } = await actions.useFetch(
-        `/routes_product/products/${id}/reviews`
-      );
+  // useEffect(() => {
+  //   const getReviews = async () => {
+  //     const { respuestaJson, response } = await actions.useFetch(
+  //       `/routes_product/products/${id}/reviews`
+  //     );
 
-      if (response.ok) {
-        setReviews(respuestaJson);
-      }
-    };
-    getReviews();
-  }, []);
+  //     if (response.ok) {
+  //       setReviews(respuestaJson);
+  //     }
+  //   };
+  //   getReviews();
+  // }, []);
 
   //Funcion para traer las reviews de un producto en especifico.
 
