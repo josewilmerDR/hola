@@ -21,6 +21,7 @@ import { useNavigate } from "react-router-dom";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 
+//Se crea el tema para el navbar con el color secundario de la paleta de colores
 const theme = createTheme({
   palette: {
     secondary: {
@@ -32,6 +33,8 @@ const theme = createTheme({
   },
 });
 
+
+//Se crea el estilo para el navbar con el color secundario de la paleta de colores
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -48,6 +51,7 @@ const Search = styled("div")(({ theme }) => ({
   },
 }));
 
+//Se crea el estilo para el icono de búsqueda
 const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: "100%",
@@ -58,6 +62,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   justifyContent: "center",
 }));
 
+//Se crea el estilo para el input de búsqueda
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
@@ -72,6 +77,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+//Se crea el componente Navbar
 function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [menuAnchorEl, setMenuAnchorEl] = React.useState(null);
@@ -121,6 +127,8 @@ function Navbar() {
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
+
+  // Menú principal 
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
@@ -130,6 +138,7 @@ function Navbar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  // Se obtiene el usuario actual
   useEffect(() => {
     const getCurrentUser = async () => {
       const { respuestaJson, response } = await actions.useFetch("/api/current-user");
@@ -144,6 +153,7 @@ function Navbar() {
     getCurrentUser();
   }, [])
 
+  // Menú de perfil de usuario
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -244,110 +254,128 @@ function Navbar() {
   );
 
 
+
   return (
-    <Box sx={{ flexGrow: 1, minWidth: "375px" }}>
-      <AppBar position="static" color="secondary" sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Toolbar>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            <IconButton
-              onClick={() => navigate("/")}
-            >
-              <img
-                src={"https://res.cloudinary.com/doqx408xv/image/upload/v1685410781/publicidad_fb_02_v4_wlxsbm.png"}
-                alt="Logo"
-                style={{
-                  height: "auto",
-                  width: "200px",
-                  marginRight: "0.5rem",
-                }}
-              />
-            </IconButton>
-          </Box>
+    <>
+      <Box sx={{ flexGrow: 1, minWidth: "375px" }}>
+        <AppBar position="static" color="secondary" sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Toolbar >
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              <IconButton
+                onClick={() => navigate("/")}
+              >
+                <img
+                  src={"https://res.cloudinary.com/doqx408xv/image/upload/v1685410781/publicidad_fb_02_v4_wlxsbm.png"}
+                  alt="Logo"
+                  style={{
+                    height: "auto",
+                    width: "200px",
+                    marginRight: "0.5rem",
+                  }}
+                />
+              </IconButton>
+            </Box>
 
-          <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
-            <IconButton
-              onClick={() => navigate("/")}
-            >
-              <img
-                src={"https://res.cloudinary.com/doqx408xv/image/upload/v1685410785/markettika_05_V2_w9oqlk.png"}
-                alt="Logo"
-                style={{
-                  height: "2.5rem",
-                  width: "60px",
-                  marginRight: "0.5rem",
+            <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
+              <IconButton
+                onClick={() => navigate("/")}
+              >
+                <img
+                  src={"https://res.cloudinary.com/doqx408xv/image/upload/v1685410785/markettika_05_V2_w9oqlk.png"}
+                  alt="Logo"
+                  style={{
+                    height: "2.5rem",
+                    width: "60px",
+                    marginRight: "0.5rem",
 
-                }}
-              />
-            </IconButton>
-          </Box>
-          <Search sx={{ minWidth: "225px", height: "35px", flex: { md: "1 1 60%" } }}>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search", width: "400px" }}
-              sx={{ width: "100%" }}
+                  }}
+                />
+              </IconButton>
+            </Box>
+            <Box sx={{ display: { xs: "none", md: "flex" }, width: "60%" }}>
+              <Search sx={{ minWidth: "100%" }}>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase sx={{ minWidth: "100%" }}
+                  placeholder="Search…"
+                  inputProps={{ "aria-label": "search" }}
+                />
+              </Search>
 
-            />
-          </Search>
-          <Box sx={{ flexGrow: 1 }} />
-          {store.userLogin ? <Box sx={{ display: { xs: "none", md: "flex" }, width: "75px", flex: { md: "0 1 15%" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </Box> : <div >
-            <Button onClick={goToRegister}>Registarme</Button>
-            <Button onClick={goToLogin}>Login</Button>
-          </div>
-          }
-          <Badge badgeContent={17} color="error">
-            <ShoppingCartIcon style={{ fontSize: "2rem", color: "gold" }} />
-          </Badge>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      {renderMainMenu}
-      {renderMobileMenu}
-      {renderMenu}
-    </Box >
+            </Box>
+
+            <Box sx={{ flexGrow: 1 }} />
+            {store.userLogin ? <Box sx={{ display: { xs: "none", md: "flex" }, width: "75px", flex: { md: "0 1 15%" } }}>
+              <IconButton
+                size="large"
+                aria-label="show 4 new mails"
+                color="inherit"
+              >
+                <Badge badgeContent={4} color="error">
+                  <MailIcon />
+                </Badge>
+              </IconButton>
+              <IconButton
+                size="large"
+                aria-label="show 17 new notifications"
+                color="inherit"
+              >
+                <Badge badgeContent={17} color="error">
+                  <NotificationsIcon />
+                </Badge>
+              </IconButton>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+            </Box> : <Box sx={{ display: { flex: "flex", justifyContent: "flex-start" }, marginRight: "5px" }}>
+              <Button onClick={goToRegister} sx={{ color: "gold" }}>Registrarme</Button>
+              <Button onClick={goToLogin} sx={{ color: "gold" }}>Login</Button>
+            </Box>
+            }
+            {/* <Badge badgeContent={17} color="error">
+              <ShoppingCartIcon style={{ fontSize: "2rem", color: "gold" }} />
+            </Badge>
+            <Box sx={{ display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+                <MoreIcon />
+              </IconButton>
+            </Box> */}
+          </Toolbar>
+        </AppBar>
+        {renderMainMenu}
+        {renderMobileMenu}
+        {renderMenu}
+      </Box >
+      <Box sx={{ display: { xs: "block", md: "none" }, border: "solid 4px black", width: "93%", marginRight: "15px" }}>
+        <Search sx={{ color: "none" }}>
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
+          <StyledInputBase
+            sx={{ width: "100%", "::placeholder": { color: "gold" } }}
+            placeholder="Buscar…"
+            inputProps={{ "aria-label": "search" }}
+
+          />
+        </Search>
+      </Box>
+    </>
   );
 }
 

@@ -125,7 +125,7 @@ function NavbarSecondary() {
     <Box sx={{ flexGrow: 1, minWidth: "375px" }}>
       <AppBar position="static" color="secondaryLight" sx={{ height: 32, width: "100%", display: "flex", flexDirection: "row", alignItems: "center" }}>
         <Toolbar sx={{ height: "20", display: "flex", justifyContent: "space-between", width: "100%" }}>
-          <Box sx={{ display: "flex", flexDirection: "row" }}>
+          <Box sx={{ display: "flex", flexDirection: "row", width: "100%" }}>
             {/* Menú para pantallas pequenhas, celulares*/}
             <IconButton
               size="medium"
@@ -146,24 +146,6 @@ function NavbarSecondary() {
               >
                 Todas las caregorías
               </Typography>
-              <Box sx={{ display: "flex", flexDirection: "column" }}>
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="div"
-                  sx={{ display: { xs: "block", sm: "none" }, paddingTop: "7px", color: "white", fontSize: "0.6rem" }}
-                >
-                  MRK:0.00012322 USD
-                </Typography>
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="div"
-                  sx={{ display: { xs: "block", sm: "none" }, paddingBottom: 0, color: "white", fontSize: "0.6rem" }}
-                >
-                  MRK:0.00012322 USD
-                </Typography>
-              </Box>
             </Box>
 
             <Box sx={{ flexGrow: 1 }} />
