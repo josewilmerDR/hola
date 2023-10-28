@@ -78,7 +78,7 @@ export default function AllProducts() {
                   />
                   <div className="card-body" style={{ width: "100%" }}>
                     <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text" style={{ display: "flex" }}>
+                    {/* <p className="card-text" style={{ display: "flex" }}>
                       <Rating
                         name="read-only"
                         value={product.average_rating}
@@ -86,7 +86,7 @@ export default function AllProducts() {
                         readOnly
                       />{" "}
                       <Typography>({product.rating_count})</Typography>{" "}
-                    </p>
+                    </p> */}
                     <p className="card-text">USD {product.price}</p>
                     {/* <p className="card-text">{product.stock}</p> */}
                     <p className="card-text">{product.category}</p>

@@ -240,6 +240,8 @@ def create_product():
     image_cloudinary_url = cloudinary.uploader.upload(
         request.files["image"],
         public_id=f'{request.form.get("name").replace(" ", "_")}_{timestamp}',
+        # Pedir la URL segura de la imagen
+        secure=True,
     )[
         "url"
     ]  # Extract the 'url' from the returned dictionary
