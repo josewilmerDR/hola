@@ -37,7 +37,7 @@ export const Home = () => {
         <p>Aquí sección de subir imagenes</p>
         <Uploader />
       </div> */}
-      <h3>Lo más valorado en Zapatos</h3>
+      <h3>Lo más valorado en Zapatos_"hola"</h3>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         <AllProducts />
       </div>
